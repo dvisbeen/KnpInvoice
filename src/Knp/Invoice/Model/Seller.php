@@ -24,9 +24,9 @@ class Seller extends Client
 
     public function setLogo($logotype)
     {
-        if (!file_exists($logotype)) {
-            throw new \InvalidArgumentException(sprintf('Logo file ("%s") not exists!', $logotype));
-        }
+        //if (!file_exists($logotype)) {
+        //    throw new \InvalidArgumentException(sprintf('Logo file ("%s") not exists!', $logotype));
+        //}
 
         $this->logotype = $logotype;
     }

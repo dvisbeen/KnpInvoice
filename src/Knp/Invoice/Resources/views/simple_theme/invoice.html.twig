@@ -3,7 +3,7 @@
 {% block content %}
     <div id="seller">
     {%- if invoice.seller.logo is not empty %}
-        <img src="{{ invoice.seller.logo }}" alt="">
+        <img src="{{ invoice.seller.logo }}" alt="" style="float:right; height:100px;">
     {%- endif %}
         <p>{{- invoice.seller.name }}</p>
         {%- for item in invoice.seller.address %}
@@ -14,15 +14,15 @@
     <div id="invoice">
         <dl>
             <dd>{{ invoice.number }}</dd>
-            <dt>Facture #</dt>
+            <dt>Invoice #</dt>
 
             <dd>{{ invoice.createdAt|date('F j, Y') }}</dd>
-            <dt>Facture Date</dt>
+            <dt>Invoice Date</dt>
         </dl>
 
         <dl class="invoice-total">
             <dd>&euro; {{ invoice.total.amount }} EUR</dd>
-            <dt>Amount Due</dt>
+            <dt>Amount Paid</dt>
         </dl>
     </div>
 
@@ -62,23 +62,16 @@
             <dd>{{ invoice.coupon.name }} (-{{ invoice.coupon.value }})</dd>
         {%- endif %}
 
-            <dt>Amount Paid</dt>
-            <dd>-{{ invoice.paid|default('0.00') }}</dd>
         </dl>
 
         <dl class="invoice-total">
-            <dt>Amount Due</dt>
-            <dd>&euro; {{ invoice.total.amount }} EUR</dd>
+            <dt>Amount Paid</dt>
+            <dd>&euro; {{ invoice.total.brutto }} EUR</dd>
         </dl>
     </div>
 
     <div id="terms">
-        <strong>Terms:</strong>
-        <p>{{ invoice.terms|default('-') }}</p>
-    </div>
-
-    <div id="notes">
-        <strong>Notes:</strong>
-        <p>{{ invoice.notes|default('-') }}</p>
+        <strong>Thank you for using Snitcher.com.<br>Any questions about this invoice? Contact us at support@snitcher.com or using +1 800 945 2559</strong>
     </div>
 {% endblock %}
+
