@@ -21,7 +21,7 @@
         </dl>
 
         <dl class="invoice-total">
-            <dd>&euro; {{ invoice.total.amount }} EUR</dd>
+            <dd>${{ invoice.total.amount }} USD</dd>
             <dt>Amount Paid</dt>
         </dl>
     </div>
@@ -42,20 +42,20 @@
     <div id="invoice-total">
         <dl>
             <dt><strong>Subtotal</strong></dt>
-            <dd><strong>{{ invoice.total.netto }}</strong></dd>
+            <dd><strong>${{ invoice.total.netto }}</strong></dd>
 
         {%- for tax, value in invoice.total.taxes %}
             <dt>{{ tax|default('TVA 0%') }}</dt>
-            <dd>{{ value|default(0) }}</dd>
+            <dd>{{ value|default(0) }}%</dd>
         {%- else %}
-            <dt>TVA 0%</dt>
+            <dt>TVA 0%</dt>%
             <dd>0</dd>
         {%- endfor %}
         </dl>
 
         <dl>
             <dt><strong>Total</strong></dt>
-            <dd><strong>{{ invoice.total.brutto }}</strong></dd>
+            <dd><strong>${{ invoice.total.brutto }}</strong></dd>
 
         {%- if invoice.coupon is not empty %}
             <dt>Coupon used</dt>
@@ -66,7 +66,7 @@
 
         <dl class="invoice-total">
             <dt>Amount Paid</dt>
-            <dd>&euro; {{ invoice.total.brutto }} EUR</dd>
+            <dd>${{ invoice.total.brutto }} USD</dd>
         </dl>
     </div>
 
