@@ -1,13 +1,13 @@
 {
-    "name": "knplabs/knp-invoice",
+    "name": "dvisbeen/knp-invoice",
     "type": "library",
     "description": "PDF invoice generation",
     "keywords": ["invoice", "pdf", "generator"],
 
     "authors": [
         {
-            "name": "KnpLabs Team",
-            "homepage": "http://knplabs.com"
+            "name": "KnpLab Team",
+            "homepage": "http://knplab.com"
         }
     ],
 
