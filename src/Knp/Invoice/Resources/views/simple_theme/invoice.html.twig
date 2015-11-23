@@ -3,15 +3,15 @@
 {% block content %}
     <div id="seller">
     {%- if invoice.seller.logo is not empty %}
-        <img src="{{ invoice.seller.logo }}" alt="" style="float:right; height:100px;">
+        <img src="{{ invoice.seller.logo }}" alt="" style="margin-left: 0px; height:50px;">
     {%- endif %}
         <p>{{- invoice.seller.name }}</p>
         {%- for item in invoice.seller.address %}
-            <p>{{- item }}</p>
+            {{- item }}<br>
         {%- endfor %}
     </div>
 
-    <div id="invoice">
+    <div id="invoice" style="margin-left: 350px;">
         <dl>
             <dd>{{ invoice.number }}</dd>
             <dt>Invoice #</dt>
@@ -28,10 +28,12 @@
 
     {%- if invoice.buyer is not empty %}
     <div id="buyer">
-        <p>{{- invoice.buyer.name }}</p>
+        <p><strong>CUSTOMER:</strong></p>
+        <p>{{- invoice.buyer.name }}<br>
         {%- for item in invoice.buyer.address %}
-        <p>{{- item }}</p>
+        {{- item }}<br>
         {%- endfor %}
+        </p>
     </div>
     {%- endif %}
 
@@ -70,7 +72,7 @@
         </dl>
     </div>
 
-    <div id="terms">
+    <div id="terms"><br><br><br>
         <strong>Thank you for using Snitcher.com.<br>Any questions about this invoice? Contact us at support@snitcher.com or using +1 800 945 2559</strong>
     </div>
 {% endblock %}
