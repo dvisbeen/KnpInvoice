@@ -98,6 +98,11 @@ class Invoice
         return $this->paidAmount;
     }
 
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
     public function getTotal()
     {
         $netto  = 0;
